@@ -6,24 +6,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/")
 public class ConfigClientController {
-	
+
 	@Value("${my.greeting: default value}")
 	private String message;
-	
-		
+
 	public ConfigClientController() {
-		
+
 	}
-	
+
 	@GetMapping("/client")
 	public String getConfig() {
-		return "my.greeting:"+ message;
+		return "my.greeting:" + message;
 	}
-	
+
 	@GetMapping("/")
 	public String isActive() {
 		return "Running";
 	}
-	
 
 }
